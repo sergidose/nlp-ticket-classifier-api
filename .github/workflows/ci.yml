@@ -25,5 +25,7 @@ jobs:
           ruff format --check .
 
       - name: Tests
+        env:
+          PYTHONPATH: .
         run: |
-          pytest -q
+          python -m pytest -q
