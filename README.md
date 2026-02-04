@@ -1,3 +1,5 @@
+![CI](https://github.com/sergidose/nlp-ticket-classifier-api/actions/workflows/ci.yml/badge.svg)
+
 # NLP Ticket Classifier API
 
 Clasificador de tickets de soporte **end-to-end**: genera dataset sintético reproducible, entrena un modelo NLP clásico (**TF-IDF + Logistic Regression**) y sirve predicciones con **FastAPI**.
