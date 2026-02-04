@@ -15,7 +15,7 @@ from __future__ import annotations
 import json
 import os
 from dataclasses import asdict, dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import joblib
@@ -76,7 +76,7 @@ def train_and_save(data_path: Path, model_path: Path, metrics_path: Path) -> Met
         f1_macro=float(f1_score(y_test, pred, average="macro")),
         n_train=int(len(X_train)),
         n_test=int(len(X_test)),
-        trained_at_utc=datetime.now(timezone.utc).isoformat(),
+        trained_at_utc=datetime.now(UTC).isoformat(),
     )
 
     # crea carpetas si no existen

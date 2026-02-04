@@ -10,10 +10,9 @@ from __future__ import annotations
 import json
 import os
 from pathlib import Path
-from typing import Any, Dict, Tuple
+from typing import Any
 
 import joblib
-
 
 ROOT = Path(__file__).resolve().parents[1]
 MODEL_PATH = Path(os.getenv("MODEL_PATH", str(ROOT / "models" / "ticket_model.joblib")))
@@ -25,14 +24,14 @@ def load_model(model_path: Path = MODEL_PATH):
     return joblib.load(str(model_path))
 
 
-def load_metrics(metrics_path: Path = METRICS_PATH) -> Dict[str, Any]:
+def load_metrics(metrics_path: Path = METRICS_PATH) -> dict[str, Any]:
     """Devuelve dict con métricas. Si no existe, devuelve {}."""
     if not metrics_path.exists():
         return {}
     return json.loads(metrics_path.read_text(encoding="utf-8"))
 
 
-def predict_one(model, text: str) -> Tuple[str, float]:
+def predict_one(model, text: str) -> tuple[str, float]:
     """
     Predice una categoría. Si el modelo soporta predict_proba, devuelve también confidence.
     """
