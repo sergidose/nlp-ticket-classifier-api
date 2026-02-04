@@ -1,0 +1,9 @@
+.venv
+__pycache__/
+.pytest_cache/
+ruff_cache/
+.git
+.vscode
+data/raw/
+models/*.joblib
+models/*.json

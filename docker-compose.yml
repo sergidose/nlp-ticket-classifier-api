@@ -1,0 +1,10 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8001:8001"
+    environment:
+      - MODEL_PATH=/app/models/ticket_model.joblib
+      - METRICS_PATH=/app/models/metrics.json
+      - DATA_PATH=/app/data/raw/tickets.csv
+      - PORT=8001
